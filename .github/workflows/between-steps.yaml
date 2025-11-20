@@ -1,9 +1,7 @@
 name: Getting shared files between steps
 
 on: 
-  push:
-    branches:
-      - main
+  workflow_dispatch
 
 jobs:
   between-steps:
