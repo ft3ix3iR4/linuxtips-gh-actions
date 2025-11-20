@@ -16,7 +16,7 @@ jobs:
         run: echo "This is a test message." > message.txt
 
       - name: Listing files
-        run: ls -lha"
+        run: ls -lha
 
       - name: Reading a message
         run: cat message.txt
