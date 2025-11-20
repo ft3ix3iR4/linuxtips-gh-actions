@@ -1,0 +1,25 @@
+name: Getting shared files between jobs
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ubuntu version checking
+        run: cat /etc/os-release
+      
+      - name: Saving text message
+        run: echo "This is a test message." > message.txt
+
+  job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Listing files
+        run: ls -lha
+
+      - name: Reading a message
+        run: cat message.txt
