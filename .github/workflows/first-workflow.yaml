@@ -1,0 +1,16 @@
+name: First Worflow
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  giropops:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ubuntu version checking
+        run: cat /etc/os-release
+      
+      - name: Showing a message
+        run: echo "This is a test message."
