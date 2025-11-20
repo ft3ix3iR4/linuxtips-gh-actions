@@ -1,4 +1,4 @@
-name: First Worflow
+name: Getting shared files between steps
 
 on: 
   push:
@@ -6,13 +6,13 @@ on:
       - main
 
 jobs:
-  giropops:
+  between-steps:
     runs-on: ubuntu-latest
     steps:
       - name: Ubuntu version checking
         run: cat /etc/os-release
       
-      - name: Showing a message
+      - name: Saving text message
         run: echo "This is a test message." > message.txt
 
       - name: Listing files
