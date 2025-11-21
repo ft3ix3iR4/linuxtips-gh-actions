@@ -15,9 +15,14 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: Pull ocker image
+            - name: Pull docker image
               run: docker pull ${{ github.event.inputs.image }}
 
             - name: Listing images
               run: docker images
-
+            
+            - name: Docker Scout
+              uses: docker/scout-action@v1
+              with:
+                image: ${{ github.event.inputs.image }}
+                only-severities: critical,high
