@@ -1,0 +1,23 @@
+name: Desafio 1
+
+on: 
+  workflow_dispatch:
+    inputs:
+      image:
+        description: "Informe a imagem desejada:"
+        required: true
+        type: string
+
+jobs:
+    pull_image:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Pull ocker image
+              run: docker pull ${{ github.event.inputs.image }}
+
+            - name: Listing images
+              run: docker images
+
